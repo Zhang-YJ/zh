@@ -15,7 +15,7 @@ class Index extends Base
         //设置全局查询条件
         $map = [];  //将当前页面的全部查询条件封装到一个条件数组中
         // 条件1:显示状态必须为1
-        $map[] = ['status','=',1];  //等号必须要有,不允许省略
+        $map[] = ['status','=',1];  //等号必须要有
 
         //实现搜索功能
         $keywords = Request::param('keywords');
