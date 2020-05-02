@@ -40,7 +40,7 @@ class Base extends Controller
     	} 
     }
 
-    //检查是否未登录:放在需要登录操作的方法的最前面,例如发布文章
+    //检查是否未登录:放在需要登录操作的方法的最前面
     protected function isLogin()
     {
         if (!Session::has('user_id')) {
