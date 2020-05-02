@@ -22,7 +22,7 @@ class Base extends Controller
     protected function isLogin()
     {
         if (!Session::has('user_id')) {
-            $this->error('请先登录','admin/user/login');
+            $this->error('请您先登录','admin/user/login');
         }
     }
 
