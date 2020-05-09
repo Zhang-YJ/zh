@@ -10,7 +10,10 @@ use think\Db;
 
 class Index extends Base
 {
-    //首页
+    /**
+     * @return mixed
+     * @throws \think\exception\DbException
+     */
     public function index()
     {
         //设置全局查询条件
@@ -56,7 +59,10 @@ class Index extends Base
         return $this->fetch('index', ['title' => '社区问答']);
     }
 
-    //添加文章界面
+    /**
+     * @return string
+     * @throws \think\exception\DbException
+     */
     public function insert()
     {
         //1.必须登录才允许发布
@@ -78,7 +84,10 @@ class Index extends Base
         return $this->view->fetch('insert', ['title' => '发布文章']);
     }
 
-    //保存文章
+
+    /**
+     * 保存文章
+     */
     public function save()
     {
         if (Request::isPost()) {
@@ -121,7 +130,10 @@ class Index extends Base
         }
     }
 
-    //详情页
+    /**
+     * @return string
+     * @throws \think\exception\DbException
+     */
     public function detail()
     {
         $artId = Request::param('id');
@@ -138,7 +150,14 @@ class Index extends Base
     }
 
 
-    // 用户收藏
+    /**
+     * @return array
+     * @throws \think\Exception
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     * @throws \think\exception\PDOException
+     */
     public function fav()
     {
 

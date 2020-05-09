@@ -1,17 +1,19 @@
-<?php 
+<?php
+
 namespace app\admin\common\controller;
+
 use think\Controller;
 use think\facade\Request;
 use think\facade\Session;
 use app\admin\common\model\Site;
 
 //后台公共控制器
-class Base extends Controller 
+class Base extends Controller
 {
-	// 初始化
+    // 初始化
     protected function initialize()
     {
-        
+
     }
 
     /**
@@ -22,9 +24,9 @@ class Base extends Controller
     protected function isLogin()
     {
         if (!Session::has('user_id')) {
-            $this->error('请您先登录','admin/user/login');
+            $this->error('请您先登录', 'admin/user/login');
         }
     }
 
-   
+
 }
